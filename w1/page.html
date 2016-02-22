@@ -2,10 +2,24 @@
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+		fieldset { background:lightyellow; 
+			border:10px solid yellow; 
+			margin-bottom:10px;
+			width: 720px; }
+		label { width: 180px;
+			display:inline-block;
+			text-align: right;
+			text-align: top }
+		.first { background: red }
+		.last { background: green }
+		label:hover { font-size:10px }
+	</style>
+	<script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
 </head>
 <body>
 <H1>Please Enter Your Details For Our Dating Website</H1>
-<form>
+<form name="form" action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
 	<fieldset>
 		<legend>Your Face</legend>
 		<label for="file">Your image</label>
@@ -19,7 +33,7 @@
 		<label for="name">Name</label>
 		<input id="name" name="name" type="text" required></input>
 		<br>
-		<label for="gender">Gender</label>
+		<label for="gender" class="auto">Gender</label>
 		<input id="gender" name="gender" type="radio" required>Male</input>
 		<input id="gender" name="gender" type="radio" required>Female</input>
 		<br>
@@ -34,15 +48,43 @@
 		<br>
 		<label>Witch Country?</label>
 		<select>
-			<option></option>
-			<option></option>
-			<option></option>
-			<option></option>
-			<option></option>
-			<option></option>
+			<option>No Selection</option>
+			<option>Ukraine</option>
+			<option>Russia</option>
+			<option>England</option>
+			<option>India</option>
+			<option>Pakistan</option>
 		</select>
-		<input id="country" name="country" type="select" value="Empty"></input>
 	</fieldset>
+	<fieldset>
+		<legend>Your indicators</legend>
+		<label for="height">Your Height?</label>
+		<span class="first">Short</span>
+		<input id="height" name="height" type="range" min="0", max="100"></input>
+		<span class="last">High</span>
+		<br>
+		<label for="salery">Your Salery?</label>
+		<span class="first">Poor</span>
+		<input id="salery" name="salery" type="range" min="0", max="100"></input>
+		<span class="last">Rich</span>
+	</fieldset>
+	<fieldset>
+		<legend>Your Contact Information</legend>
+		<label for="email">Email</label>
+		<input id="email" name="email" type="email"></input>
+		<br>
+		<label for="phone">Phone</label>
+		<input id="phone" name="phone" type="tel"></input>
+		<br>
+		<label for="address">Address</label>
+		<textarea id="address" name="address" width="60" height="5"></textarea>
+		<br>
+		<label class="auto">Method to contact</label>
+		<input id="cbemail" name="cbemail" type="checkbox" class="auto">Email</input>
+		<input id="cbphone" name="cbphone" type="checkbox" class="auto">Phone</input>
+		<input id="cbfb" name="cbfb" type="checkbox" class="auto">Facebook</input>
+	</fieldset>
+	<input type="submit" value="Submit!">
 </form>
 
 </body>
